@@ -63,7 +63,16 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		
+	    for (int k= size -1 ; k >= 0; k--) {
+	    	int j = (int)(Math.random()* k);
+	    	Card empti = cards.get(j);
+	    	cards.set(j, cards.get(k));
+	    	cards.set(k, empti);		
+	    }
+		
 	}
+	
 
 	/**
 	 * Deals a card from this deck.

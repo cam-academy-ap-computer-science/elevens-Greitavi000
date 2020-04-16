@@ -52,5 +52,45 @@ public class DeckTester {
 		System.out.println();
 
 		/* *** TO BE COMPLETED IN ACTIVITY 4 *** */
+		System.out.println("**** Shuffle Cards ****");
+		
+		String[] ranks1 = new String[52];
+		String[] suits1 = new String[52];
+		int[] pointValues1 =new int[52];
+
+		for (int s = 0; s<52; s++) {
+			String ranks2 ="";
+			String suits2 ="";
+			if ((s+1)% 13 == 11) {
+				ranks2 = "jack";
+			}else if ((s+1)% 13 == 12) {
+				ranks2 = "queen";
+			} else if ((s+1)% 13 == 0) {
+				ranks2 = "king";
+			}
+			else if  ((s+1)% 13 == 1) {
+				ranks2 = "ase";
+			} else {
+				ranks2 =  Integer.toString((s+1)% 13);
+			}
+
+			if (s<13) {
+				suits2 = "clubs";
+			}else if (s<26) {
+				suits2 = "spades";
+			} else if (s< 39) {
+				suits2 = "hearts";
+			} else {
+				suits2 = "clubs";
+			}
+			ranks1 [s]= ranks2;
+			suits1 [s]= suits2;
+		    pointValues1[s] =((s+1)% 13);
+			
+		}
+		
+		Deck c = new Deck(ranks1, suits1, pointValues1);
+		System.out.println(c);
+
 	}
 }
